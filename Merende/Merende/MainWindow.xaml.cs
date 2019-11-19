@@ -20,9 +20,45 @@ namespace Merende
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+        private List<Merenda> merendeDisponibili;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            merendeDisponibili = new List<Merenda>();
+
+            CaricamentoMerende();
+        }
+        private void CaricamentoMerende()
+        {
+            string line;
+            StreamReader sr = new StreamReader("Merende.csv");
+            sr.ReadLine();
+            while ((line = sr.ReadLine()) != null)
+            {
+                try
+                {
+                    Merenda m = new Merenda();
+                    string[] campi = line.Split(';');
+                    string nome = campi[0];
+                    m.Nome = nome;
+                    double prezzo = Convert.ToDouble(campi[1]);
+                    m.Prezzo = prezzo;
+                    merendeDisponibili.Add(m);
+                }
+                catch
+                {
+
+                }
+
+
+            }
+            foreach (Merenda m in merendeDisponibili)
+            {
+                lst_lista.Items.Add(m);
+            }
         }
     }
-}
