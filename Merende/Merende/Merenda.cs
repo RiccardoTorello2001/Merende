@@ -8,6 +8,12 @@ namespace Merende
 {
     class Merenda
     {
+        public string Nome { get; set; }
+        public double Prezzo { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Nome}: {Prezzo.ToString()} Euro";
+        }
     }
 }
