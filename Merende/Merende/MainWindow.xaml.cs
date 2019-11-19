@@ -31,7 +31,7 @@ namespace Merende
 
             merendeDisponibili = new List<Merenda>();
 
-            CaricamentoMerende();
+           
         }
         private void CaricamentoMerende()
         {
@@ -50,16 +50,20 @@ namespace Merende
                     m.Prezzo = prezzo;
                     merendeDisponibili.Add(m);
                 }
-                catch
+                catch(Exception e)
                 {
-
+                    MessageBox.Show(e.ToString());
+                    break;
                 }
-
+                
 
             }
-            foreach (Merenda m in merendeDisponibili)
-            {
-                lst_lista.Items.Add(m);
-            }
+            Dispatcher.Invoke(() => lst_lista.ItemsSource = merendeDisponibili);
+        }
+
+        private void Btn_visualizzalista_Click(object sender, RoutedEventArgs e)
+        {
+            Task.Factory.StartNew(CaricamentoMerende);
         }
     }
+}

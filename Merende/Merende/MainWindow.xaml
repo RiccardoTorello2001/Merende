@@ -14,7 +14,13 @@
             </LinearGradientBrush>
         </Grid.Background>
         <ListBox x:Name="lst_lista" HorizontalAlignment="Left" Height="265" Margin="25,90,0,0" VerticalAlignment="Top" Width="195"/>
-        <Label x:Name="lbl_lista" Content="Lista" HorizontalAlignment="Left" Margin="35,40,0,0" VerticalAlignment="Top" Height="45" Width="185"/>
+        <Label x:Name="lbl_lista" Content="Lista delle merende" HorizontalAlignment="Left" Margin="35,40,0,0" VerticalAlignment="Top" Height="45" Width="185"/>
+        <Button x:Name="btn_visualizzalista" Content="Visualizza lista" HorizontalAlignment="Left" Margin="310,90,0,0" VerticalAlignment="Top" Width="115" Height="25" Click="Btn_visualizzalista_Click"/>
+        <Button x:Name="btn_aggiungi" Content="aggiungi" HorizontalAlignment="Left" Margin="310,135,0,0" VerticalAlignment="Top" Width="115" Height="25"/>
+        <Button x:Name="btn_rimuovi" Content="rimuovi" HorizontalAlignment="Left" Margin="310,180,0,0" VerticalAlignment="Top" Width="115" Height="25"/>
+        <Button x:Name="btn_calcolaspesa" Content="Calcola Spesa" HorizontalAlignment="Left" Margin="295,280,0,0" VerticalAlignment="Top" Width="130" Height="55"/>
+        <ListBox x:Name="lst_scelta" HorizontalAlignment="Left" Height="265" Margin="540,90,0,0" VerticalAlignment="Top" Width="195"/>
+        <Label x:Name="lbl_scelta" Content="Merende scelte&#xD;&#xA;" HorizontalAlignment="Left" Margin="540,40,0,0" VerticalAlignment="Top" Height="45" Width="185"/>
 
     </Grid>
 </Window>
