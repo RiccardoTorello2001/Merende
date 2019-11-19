@@ -65,5 +65,19 @@ namespace Merende
         {
             Task.Factory.StartNew(CaricamentoMerende);
         }
+
+        private void Btn_aggiungi_Click(object sender, RoutedEventArgs e)
+        {
+            Merenda ms = (Merenda)lst_lista.SelectedItem;
+            lst_scelta.Items.Add(ms);
+            btn_rimuovi.IsEnabled = true;
+            
+        }
+
+        private void Lst_lista_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btn_aggiungi.IsEnabled = true;
+            btn_rimuovi.IsEnabled = false;
+        }
     }
 }
